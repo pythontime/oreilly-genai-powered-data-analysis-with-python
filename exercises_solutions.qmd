@@ -1,5 +1,5 @@
 ---
-title: 'Walkthroughs and Exercises for GenAi-Powered Data Analysis in Python'  
+title: 'Walkthroughs and Exercises for GenAI-Powered Data Analysis in Python'  
 author: "Dr. Chester Ismay"  
 format:
   html:
@@ -7,20 +7,18 @@ format:
     toc-location: left   # options: left, right, body, left-body, right-body
     toc-depth: 2         # optional
     toc-title: Contents  # optional
-engine: knitr  
-# engine: jupyter
-# format:
-#   ipynb: default
+  ipynb: default
+# engine: knitr  
+engine: jupyter
 ---
 
 ```{python}
-#| echo: false
+#| include: false
 import pandas as pd
 
-pd.set_option("display.max_columns", None)   # show all columns
-# pd.set_option("display.max_rows", 200)       # adjust as you like
-pd.set_option("display.width", None)         # no fixed line width
-pd.set_option("display.max_colwidth", None)  # show full cell contents
+pd.set_option("display.max_columns", 100)
+pd.set_option("display.width", 200)
+pd.set_option("display.max_colwidth", 200)
 ```
 
 # Data Analytics Kickoff + Course Goals
@@ -42,6 +40,23 @@ from plotly.subplots import make_subplots
 
 ```{python}
 #| output: false
+#| echo: false
+import plotly.offline as pyo
+
+try:
+    shell = get_ipython().__class__.__name__
+    if shell == 'ZMQInteractiveShell':
+        # Running in a Jupyter notebook
+        pyo.init_notebook_mode(connected=True)
+except NameError:
+    # Not in IPython at all (e.g., knitr/reticulate)
+    pass
+```
+
+
+```{python}
+#| output: false
+#| eval: false
 # For plotly to load directly in Jupyter notebook
 import plotly.offline as pyo
 pyo.init_notebook_mode(connected=True)
