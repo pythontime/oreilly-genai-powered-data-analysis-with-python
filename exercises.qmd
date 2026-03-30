@@ -1,5 +1,5 @@
 ---
-title: 'Walkthroughs and Exercises for GenAi-Powered Data Analysis in Python'  
+title: 'Walkthroughs and Exercises for GenAI-Powered Data Analysis in Python'  
 author: "Dr. Chester Ismay"  
 #format: html
 #engine: knitr 
@@ -396,7 +396,7 @@ economies_fill_value = economies.fillna({
 
 # Module 3: Exploring and Learning from Mistakes
 
-Use the provided prompt as your initial guide. Here are 8 Python errors that
+Use the provided prompt (`prompt.md` on GitHub) as your initial guide. Here are 8 Python errors that
 you'll attempt to use LLMs to help you debug. Make sure to run the code in
 Jupyter first and then try to debug!
 
