@@ -1,6 +1,7 @@
 ---
 title: 'Walkthroughs and Exercises for GenAI-Powered Data Analysis in Python'  
 author: "Dr. Chester Ismay"  
+page-layout: full
 format:
   html:
     toc: true
@@ -508,6 +509,7 @@ plt.bar(x=data_2020_caribbean['code'],
         height=data_2020_caribbean['gdp_percapita'], 
         color='g')
 plt.xticks(rotation=45);
+plt.tight_layout()
 plt.show();
 
 # Horizontal version
@@ -515,6 +517,7 @@ plt.figure(figsize=(10, 3))
 plt.barh(y=data_2020_caribbean['code'], 
          width=data_2020_caribbean['gdp_percapita'], 
          color='g')
+plt.tight_layout()
 plt.show();
 ```
 
@@ -531,6 +534,7 @@ plt.xlabel('Year');
 plt.ylabel('GDP Per Capita');
 plt.title('GDP Per Capita Over Years for Liberia (LBR)');
 plt.grid(True);
+plt.tight_layout()
 plt.show();
 ```
 
@@ -553,6 +557,7 @@ plt.xticks(rotation=45);
 plt.yticks(range(0, int(max(data_2020_caribbean['gdp_percapita']) + 5000), 5000));
 
 plt.grid(axis='y')
+plt.tight_layout()
 plt.show();
 ```
 
@@ -562,6 +567,7 @@ plt.show();
 plt.figure(figsize=(10, 3))
 sns.histplot(economies['gdp_percapita'], bins=30, kde=True)
 plt.xlabel('GDP Per Capita')
+plt.tight_layout()
 plt.show();
 ```
 
@@ -573,6 +579,7 @@ sns.boxplot(x='gdp_percapita', y='income_group', data=economies)
 plt.xlabel('GDP Per Capita')
 plt.ylabel('Income Group')
 plt.title('Boxplot of GDP Per Capita by Income Group')
+plt.tight_layout()
 plt.show();
 ```
 
@@ -584,6 +591,7 @@ sns.violinplot(x='gdp_percapita', y='income_group', data=economies)
 plt.xlabel('GDP Per Capita')
 plt.ylabel('Income Group')
 plt.title('Violin Plot of GDP Per Capita by Income Group')
+plt.tight_layout()
 plt.show();
 ```
 
@@ -600,6 +608,7 @@ india_data = populations[populations['country_code'] == 'IND']
 # Line plot of fertility rate over the years
 plt.figure(figsize=(10, 3))
 plt.plot(india_data['year'], india_data['fertility_rate'], marker='o', linestyle='-', color='b')
+plt.tight_layout()
 plt.show();
 ```
 
@@ -613,6 +622,7 @@ data_2020_asia = populations[(populations['year'] == 2020) & (populations['count
 # Bar chart of population size for selected Asian countries in 2020
 plt.figure(figsize=(10, 3))
 plt.bar(data_2020_asia['country_code'], data_2020_asia['size'], color='g')
+plt.tight_layout()
 plt.show();
 ```
 
@@ -630,6 +640,7 @@ plt.xlabel('Year')
 plt.ylabel('Life Expectancy')
 plt.title('Life Expectancy Over Years for Nigeria (NGA)')
 plt.grid(True)
+plt.tight_layout()
 plt.show();
 ```
 
@@ -658,6 +669,7 @@ plt.xticks(rotation=45);
 plt.yticks(range(0, int(max(data_2020_africa['fertility_rate']) + 1), 1));
 
 plt.grid(axis='y');
+plt.tight_layout()
 plt.show();
 ```
 
@@ -670,6 +682,7 @@ sns.histplot(populations['life_expectancy'], bins=30, kde=True)
 plt.xlabel('Life Expectancy')
 plt.ylabel('Frequency')
 plt.title('Histogram of Life Expectancy')
+plt.tight_layout()
 plt.show();
 ```
 
@@ -682,6 +695,7 @@ sns.boxplot(x='continent', y='fertility_rate', data=populations)
 plt.xlabel('Continent')
 plt.ylabel('Fertility Rate')
 plt.title('Boxplot of Fertility Rate by Continent')
+plt.tight_layout()
 plt.show();
 ```
 
@@ -694,6 +708,7 @@ sns.violinplot(x='continent', y='fertility_rate', data=populations)
 plt.xlabel('Continent')
 plt.ylabel('Fertility Rate')
 plt.title('Violin Plot of Fertility Rate by Continent')
+plt.tight_layout()
 plt.show();
 ```
 
